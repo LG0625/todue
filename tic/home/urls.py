@@ -20,5 +20,4 @@ urlpatterns = [
     path("dashboard/", views.dashboard, name="dashboard"),
     path("calendar/", views.calendar, name="calendar"),
     path("settings/", views.settings, name="settings"),
-    path('add-to-google-calendar/<str:event_type>/<int:event_id>/', views.add_to_google_calendar, name='add_to_google_calendar'),
 ]
