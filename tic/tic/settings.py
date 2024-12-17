@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     "home",
     "users",
+    "whitenoise.runserver_nostatic",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -52,6 +53,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "tic.urls"
@@ -130,6 +133,4 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-GOOGLE_CAL_CLIENT_ID = '838653658442-beduhl41n0du9t5ebfdh0stp72gf0qbg.apps.googleusercontent.com'
-GOOGLE_CAL_REDIRECT_URI = 'https://127.0.0.1:8000/oauth/callback'
-
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
