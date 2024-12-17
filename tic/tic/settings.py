@@ -131,5 +131,8 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-_txx$5f4o&9+_6x3!12^(i_hy%i2ysho(&$&c%gk7a#i#=lnyz")
+DEBUG = os.environ.get("DEBUG", "False") == "True"
+import django_heroku 
+django_heroku.settings(locals())
